@@ -1,2 +1,3 @@
 # patravali
-Open-source alternative for Dynalist and Workflowy
+Open-source Notes creating and management 
+
