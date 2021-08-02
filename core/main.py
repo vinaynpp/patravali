@@ -1,9 +1,8 @@
 import os
-
-from flask import Flask, request, jsonify, render_template
-
+from flask import Flask, Blueprint, request, jsonify, render_template
+from auth.authmain import auth
 app = Flask(__name__, template_folder='templates', static_folder='static')
-
+app.register_blueprint(auth, url_prefix='/auth')
 
 @app.route('/')
 def index():
@@ -18,6 +17,9 @@ def home():
 @app.route('/app')
 def apppage():
     return render_template('app.html')
+
+
+
 
 
 if __name__ == '__main__':
